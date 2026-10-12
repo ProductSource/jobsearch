@@ -1,6 +1,6 @@
 import SearchApp from '@/components/SearchApp';
 import Guide from '@/components/Guide';
-import { FAQ, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from '@/lib/site';
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from '@/lib/site';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -25,15 +25,6 @@ const jsonLd = {
       isAccessibleForFree: true,
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
       isPartOf: { '@id': `${SITE_URL}/#website` }
-    },
-    {
-      '@type': 'FAQPage',
-      '@id': `${SITE_URL}/#faq`,
-      mainEntity: FAQ.map(f => ({
-        '@type': 'Question',
-        name: f.q,
-        acceptedAnswer: { '@type': 'Answer', text: f.a }
-      }))
     }
   ]
 };
